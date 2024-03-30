@@ -50,42 +50,41 @@ sample = {'Body Type': 2,
  'Vehicle Type_petrol': 0}
 
 def input_preprocessing(data):
-    data["Body Type"] = data["Body Type"].map({'Underweight':0, 'Normal':1, 'Overweight':2, 'Obese':3})
-    data["Sex"] = data["Sex"].map({'Female':0, 'Male':1})
+    data["Body Type"] = data["Body Type"].map({'underweight':0, 'normal':1, 'overweight':2, 'obese':3})
+    data["Sex"] = data["Sex"].map({'female':0, 'male':1})
     data = pd.get_dummies(data, columns=["Diet","Heating Energy Source","Transport","Vehicle Type"], dtype=int)
-    data["How Often Shower"] = data["How Often Shower"].map({'Less frequently':0, 'Daily':1, "Twice a day":2, "More frequently":3})
-    data["Social Activity"] = data["Social Activity"].map({'Never':0, 'Sometimes':1, "Often":2})
-    data["Frequency of Traveling by Air"] = data["Frequency of Traveling by Air"].map({'Never':0, 'Rarely':1, "Frequently":2, "Very Frequently":3})
-    data["Waste Bag Size"] = data["Waste Bag Size"].map({'Small':0, 'Medium':1, "Large":2,  "Extra large":3})
+    data["How Often Shower"] = data["How Often Shower"].map({'less frequently':0, 'daily':1, "twice a day":2, "more frequently":3})
+    data["Social Activity"] = data["Social Activity"].map({'never':0, 'sometimes':1, "often":2})
+    data["Frequency of Traveling by Air"] = data["Frequency of Traveling by Air"].map({'never':0, 'rarely':1, "frequently":2, "very frequently":3})
+    data["Waste Bag Size"] = data["Waste Bag Size"].map({'small':0, 'medium':1, "large":2,  "extra large":3})
     data["Energy efficiency"] = data["Energy efficiency"].map({'No':0, 'Sometimes':1, "Yes":2})
     return data
 def hesapla(model,ss, sample_df):
     copy_df = sample_df.copy()
     travels = copy_df[["Frequency of Traveling by Air",
                          "Vehicle Monthly Distance Km",
-                         'Transport_Private',
-                          'Transport_Public',
-                          'Transport_Walk',
-                          'Transport_Bicycle',
+                         'Transport_private',
+                          'Transport_public',
+                          'Transport_walk/bicycle',
                           'Vehicle Type_None',
-                          'Vehicle Type_Diesel',
-                          'Vehicle Type_Electric',
-                          'Vehicle Type_Hybrid',
-                          'Vehicle Type_Liquified Petroleum Gas',
-                          'Vehicle Type_Petrol']]
+                          'Vehicle Type_diesel',
+                          'Vehicle Type_electric',
+                          'Vehicle Type_hybrid',
+                          'Vehicle Type_lpg',
+                          'Vehicle Type_petrol']]
     copy_df[list(set(copy_df.columns) - set(travels.columns))] = 0
     travel = np.exp(model.predict(ss.transform(copy_df)))
 
     copy_df = sample_df.copy()
     energys = copy_df[[ 'Heating Energy Source_coal','How Often Shower', 'How Long TV PC Daily Hour',
-                         'Heating Energy Source_Electricity','How Long Internet Daily Hour',
-                         'Heating Energy Source_Natural gas',
-                         'Cooking_with_Stove',
-                          'Cooking_with_Oven',
-                          'Cooking_with_Microwave',
-                          'Cooking_with_Grill',
-                          'Cooking_with_Airfryer',
-                         'Heating Energy Source_Wood','Energy efficiency']]
+                         'Heating Energy Source_electricity','How Long Internet Daily Hour',
+                         'Heating Energy Source_natural gas',
+                         'Cooking_with_stove',
+                          'Cooking_with_oven',
+                          'Cooking_with_microwave',
+                          'Cooking_with_grill',
+                          'Cooking_with_airfryer',
+                         'Heating Energy Source_wood','Energy efficiency']]
     copy_df[list(set(copy_df.columns) - set(energys.columns))] = 0
     energy = np.exp(model.predict(ss.transform(copy_df)))
 
@@ -101,16 +100,16 @@ def hesapla(model,ss, sample_df):
     waste = np.exp(model.predict(ss.transform(copy_df)))
 
     copy_df = sample_df.copy()
-    diets = copy_df[[ 'Diet_Omnivore',
-                     'Diet_Pescatarian',
-                     'Diet_Vegan',
-                     'Diet_Vegetarian', 'Monthly Grocery Bill','Transport_Private',
-                     'Transport_Public',
-                     'Transport_Walk','Transport_Bicycle',
-                      'Heating Energy Source_Coal',
-                      'Heating Energy Source_Electricity',
-                      'Heating Energy Source_Natural gas',
-                      'Heating Energy Source_Wood',
+    diets = copy_df[[ 'Diet_omnivore',
+                     'Diet_pescatarian',
+                     'Diet_vegan',
+                     'Diet_vegetarian', 'Monthly Grocery Bill','Transport_private',
+                     'Transport_public',
+                     'Transport_walk/bicycle',
+                      'Heating Energy Source_coal',
+                      'Heating Energy Source_electricity',
+                      'Heating Energy Source_natural gas',
+                      'Heating Energy Source_wood',
                       ]]
     copy_df[list(set(copy_df.columns) - set(diets.columns))] = 0
     diet = np.exp(model.predict(ss.transform(copy_df)))
