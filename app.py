@@ -55,46 +55,46 @@ def component():
     body_type = "underweight" if (calculation < 18.5) else \
                  "normal" if ((calculation >=18.5) and (calculation < 25 )) else \
                  "overweight" if ((calculation >= 25) and (calculation < 30)) else "obese"
-    sex = tab1.selectbox('Gender', ["Female", "Male"])
-    diet = tab1.selectbox('Diet', ['Omnivore', 'Pescatarian', 'Vegetarian', 'Vegan'], help="""
+    sex = tab1.selectbox('Gender', ["female", "male"])
+    diet = tab1.selectbox('Diet', ['omnivore', 'pescatarian', 'vegetarian', 'vegan'], help="""
                                                                                               Omnivore: Eats both plants and animals.\n
                                                                                               Pescatarian: Consumes plants and seafood, but no other meat\n
                                                                                               Vegetarian: Diet excludes meat but includes plant-based foods.\n
                                                                                               Vegan: Avoids all animal products, including meat, dairy, and eggs.""")
-    social = tab1.selectbox('Social Activity', ['Never', 'Often', 'Sometimes'], help="How often do you go out?")
+    social = tab1.selectbox('Social Activity', ['never', 'often', 'sometimes'], help="How often do you go out?")
 
-    transport = tab2.selectbox('Transportation', ['Public', 'Private', 'Walk/Bicycle'],
+    transport = tab2.selectbox('Transportation', ['public', 'private', 'walk/bicycle'],
                                help="Which transportation method do you prefer the most?")
     if transport == "private":
-        vehicle_type = tab2.selectbox('Vehicle Type', ['Petrol', 'Diesel', 'Hybrid', 'LPG', 'Electric'],
+        vehicle_type = tab2.selectbox('Vehicle Type', ['petrol', 'diesel', 'hybrid', 'lpg', 'electric'],
                                       help="What type of fuel do you use in your car?")
     else:
         vehicle_type = "None"
 
-    if transport == "Walk/Bicycle":
+    if transport == "walk/bicycle":
         vehicle_km = 0
     else:
         vehicle_km = tab2.slider('What is the monthly distance traveled by the vehicle in kilometers?', 0, 5000, 0, disabled=False)
 
-    air_travel = tab2.selectbox('How often did you fly last month?', ['Never', 'Rarely', 'Frequently', 'Very Frequently'], help= """
+    air_travel = tab2.selectbox('How often did you fly last month?', ['never', 'rarely', 'frequently', 'very frequently'], help= """
                                                                                                                              Never: I didn't travel by plane.\n
                                                                                                                              Rarely: Around 1-4 Hours.\n
                                                                                                                              Frequently: Around 5 - 10 Hours.\n
                                                                                                                              Very Frequently: Around 10+ Hours. """)
 
-    waste_bag = tab3.selectbox('What is the size of your waste bag?', ['Small', 'Medium', 'Large', 'Extra Large'])
+    waste_bag = tab3.selectbox('What is the size of your waste bag?', ['small', 'medium', 'large', 'extra large'])
     waste_count = tab3.slider('How many waste bags do you trash out in a week?', 0, 10, 0)
     recycle = tab3.multiselect('Do you recycle any materials below?', ['Plastic', 'Paper', 'Metal', 'Glass'])
 
-    heating_energy = tab4.selectbox('What power source do you use for heating?', ['Natural gas', 'Electricity', 'Wood', 'Coal'])
+    heating_energy = tab4.selectbox('What power source do you use for heating?', ['natural gas', 'electricity', 'wood', 'coal'])
 
-    for_cooking = tab4.multiselect('What cooking systems do you use?', ['Microwave', 'Oven', 'Grill', 'Airfryer', 'Stove'])
+    for_cooking = tab4.multiselect('What cooking systems do you use?', ['microwave', 'oven', 'grill', 'airfryer', 'stove'])
     energy_efficiency = tab4.selectbox('Do you consider the energy efficiency of electronic devices?', ['No', 'Yes', 'Sometimes' ])
     daily_tv_pc = tab4.slider('How many hours a day do you spend in front of your PC/TV?', 0, 24, 0)
     internet_daily = tab4.slider('What is your daily internet usage in hours?', 0, 24, 0)
 
-    shower = tab5.selectbox('How often do you take a shower?', ['Daily', 'Twice a day', 'More frequently', 'Less frequently'])
-    grocery_bill = tab5.slider('Monthly grocery spending in ₹ (in Rupees)', 0, 500, 0)
+    shower = tab5.selectbox('How often do you take a shower?', ['daily', 'twice a day', 'more frequently', 'less frequently'])
+    grocery_bill = tab5.slider('Monthly grocery spending in ₹ (INR)', 0, 500, 0)
     clothes_monthly = tab5.slider('How many clothes do you buy monthly?', 0, 30, 0)
 
     data = {'Body Type': body_type,
@@ -140,13 +140,13 @@ if resultbutton.button(" ", type = "secondary"):
     tab_result.image(chart(model,ss, sample_df,prediction), use_column_width="auto")
     click_element('tab-2')
 
-pop_button = """<button id = "button-17" class="button-17" role="button"> ❔ Did You Know</button>"""
+pop_button = """<button id = "button-17" class="button-17" role="button"> Did You Know ?</button>"""
 _,home,_ = comps.columns([1,2,1])
 _,col2,_ = comps.columns([1,10,1])
 col2.markdown(pop_button, unsafe_allow_html=True)
 pop = """
 <div id="popup" class="DidYouKnow_root">
-<p class="DidYouKnow_title TextNew" style="font-size: 20px;"> ❔ Did you know</p>
+<p class="DidYouKnow_title TextNew" style="font-size: 20px;">Did you know ?</p>
     <p id="popupText" class="DidYouKnow_content TextNew"><span>
     Each year, human activities release over 40 billion metric tons of carbon dioxide into the atmosphere, contributing to climate change.
     </span></p>
@@ -159,7 +159,7 @@ if home.button("🏡"):
 _,resultmid,_ = result.columns([1,2,1])
 
 tree_count = round(prediction / 411.4)
-tab_result.markdown(f"""You owe nature <b>{tree_count}</b> tree{'s' if tree_count > 1 else ''} monthly. <br> {f"<a href='https://www.unep.org/' id = 'button-17' class='button-17' role='button'> 🌳 Proceed to Life 🌳</a>" if tree_count > 0 else ""}""",  unsafe_allow_html=True)
+tab_result.markdown(f"""You owe nature <b>{tree_count}</b> tree{'s' if tree_count > 1 else ''} monthly. <br> {f"<a href='https://www.tema.org.tr/en/homepage' id = 'button-17' class='button-17' role='button'> 🌳 Proceed to offset 🌳</a>" if tree_count > 0 else ""}""",  unsafe_allow_html=True)
 
 if resultmid.button("  ", type="secondary"):
     click_element('tab-1')
