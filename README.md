@@ -34,9 +34,12 @@ b.User Interface Design:
   Designed an intuitive user interface using components adopted from Streamlit, CSS and Javascript.
 
 Authors:
-Siddharth V Shenoy
-Shreya Nair
-Miluna Diamond
-Varun Dinachandra
+Siddharth V Shenoy (B221219ME)
+Shreya Nair (B220064ME)
+Miluna Diamond (B220390ME)
+Varun Dinachandra (B221276ME)
+
+
+The project was developed as part of our Environmental Studies Course at National Institute of Technology Calicut.
 
 
