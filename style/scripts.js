@@ -11,6 +11,7 @@ function hidePopup() {
     window.parent.document.getElementById('button-17').style.display = 'block';
 };
 var texts = [
+    "Will be updated soon"
     
 ];
 
