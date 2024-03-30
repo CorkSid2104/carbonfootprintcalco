@@ -148,7 +148,7 @@ pop = """
 <div id="popup" class="DidYouKnow_root">
 <p class="DidYouKnow_title TextNew" style="font-size: 20px;">Did you know ?</p>
     <p id="popupText" class="DidYouKnow_content TextNew"><span>
-    The Great Barrier Reef, off the coast of Australia, is the world's largest coral reef ecosystem
+    The Great Barrier Reef, off the coast of Australia, is the world's largest coral reef ecosystem.
     </span></p>
 </div>
 """
