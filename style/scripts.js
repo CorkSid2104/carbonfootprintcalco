@@ -37,12 +37,7 @@ var texts = [
     "The ocean absorbs about 30% of the CO₂ released into the atmosphere, leading to ocean acidification.",
     "Every year, over 8 million metric tons of plastic enter the oceans, contributing to marine pollution and environmental harm.",
     "The construction industry is responsible for nearly 40% of global energy-related CO₂ emissions.",
-    "The average American generates over 16 metric tons of carbon dioxide emissions annually.",
-    "The Great Barrier Reef, off the coast of Australia, is the world's largest coral reef ecosystem.",
-    "The Amazon Rainforest produces 20% of the world's oxygen.",
-    "The concept of sustainability dates back to the 18th century when German forester Hans Carl von Carlowitz introduced the term 'Nachhaltigkeit'(sustainability).",
-    "Earth's atmosphere is composed of approximately 78% nitrogen, 21% oxygen, and trace amounts of other gases.",
-    "The oldest tree in the world is believed to be a Bristlecone Pine in California's White Mountains, estimated to be over 5,000 years old.".
+    "The average American generates over 16 metric tons of carbon dioxide emissions annually.".
     
 ];
 
