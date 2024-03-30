@@ -37,8 +37,7 @@ var texts = [
     "The ocean absorbs about 30% of the CO₂ released into the atmosphere, leading to ocean acidification.",
     "Every year, over 8 million metric tons of plastic enter the oceans, contributing to marine pollution and environmental harm.",
     "The construction industry is responsible for nearly 40% of global energy-related CO₂ emissions.",
-    "The average American generates over 16 metric tons of carbon dioxide emissions annually.".
-    
+    "The average American generates over 16 metric tons of carbon dioxide emissions annually."
 ];
 
 function changeText() {
@@ -70,14 +69,3 @@ if (!window.parent.document.querySelector('[class^=icon3]')) {
                         
 function checkScreenWidth() {
   var screenWidth = window.innerWidth || window.parent.document.documentElement.clientWidth || window.parent.document.body.clientWidth;
-
-  if (screenWidth <= 600) {
-            window.parent.document.getElementById('project-copyright').style.display = 'none';
-			Array.from(window.parent.document.querySelectorAll('button[data-baseweb="tab"] > div > p')).forEach(button => button.style.fontSize = '10px');
-  } else {
-            window.parent.document.getElementById('project-copyright').style.display = 'block';
-  }
-}
-
-window.onload = checkScreenWidth;
-window.onresize = checkScreenWidth;
