@@ -148,7 +148,7 @@ pop = """
 <div id="popup" class="DidYouKnow_root">
 <p class="DidYouKnow_title TextNew" style="font-size: 20px;">Did you know ?</p>
     <p id="popupText" class="DidYouKnow_content TextNew"><span>
-    Each year, human activities release over 40 billion metric tons of carbon dioxide into the atmosphere, contributing to climate change.
+    The Great Barrier Reef, off the coast of Australia, is the world's largest coral reef ecosystem
     </span></p>
 </div>
 """
@@ -159,7 +159,7 @@ if home.button("🏡"):
 _,resultmid,_ = result.columns([1,2,1])
 
 tree_count = round(prediction / 411.4)
-tab_result.markdown(f"""You owe nature <b>{tree_count}</b> tree{'s' if tree_count > 1 else ''} monthly. <br> {f"<a href='https://www.tema.org.tr/en/homepage' id = 'button-17' class='button-17' role='button'> 🌳 Proceed to offset 🌳</a>" if tree_count > 0 else ""}""",  unsafe_allow_html=True)
+tab_result.markdown(f"""You owe nature <b>{tree_count}</b> tree{'s' if tree_count > 1 else ''} monthly. <br> {f"<a href='https://www.unep.org/' id = 'button-17' class='button-17' role='button'> 🌳 Proceed towards Greenery 🌳</a>" if tree_count > 0 else ""}""",  unsafe_allow_html=True)
 
 if resultmid.button("  ", type="secondary"):
     click_element('tab-1')
