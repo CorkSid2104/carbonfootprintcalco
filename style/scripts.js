@@ -58,8 +58,7 @@ var texts = [
     "The Clean Water Act established water quality standards and pollution control measures in the United States.",
     "The Dust Bowl prompted federal intervention through programs like the Civilian Conservation Corps (CCC) and the Soil Conservation Service (SCS).",
     "The Rio Earth Summit resulted in agreements on biodiversity, climate change, and sustainable development.".
-    
-];
+    ];
 
 function changeText() {
     var randomIndex = Math.floor(Math.random() * texts.length);
