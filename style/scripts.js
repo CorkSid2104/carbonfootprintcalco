@@ -11,54 +11,35 @@ function hidePopup() {
     window.parent.document.getElementById('button-17').style.display = 'block';
 };
 var texts = [
-       "The Great Barrier Reef, off the coast of Australia, is the world's largest coral reef ecosystem.",
-    "The Amazon Rainforest produces 20% of the world's oxygen.",
-    "The concept of sustainability dates back to the 18th century when German forester Hans Carl von Carlowitz introduced the term 'Nachhaltigkeit' (sustainability).",
-    "Earth's atmosphere is composed of approximately 78% nitrogen, 21% oxygen, and trace amounts of other gases.",
-    "The oldest tree in the world is believed to be a Bristlecone Pine in California's White Mountains, estimated to be over 5,000 years old.",
-    "The ozone layer, found in the Earth's stratosphere, protects life on Earth by absorbing harmful ultraviolet radiation from the sun.",
-    "The Industrial Revolution in the 18th and 19th centuries marked a significant increase in pollution and environmental degradation.",
-    "Plastic pollution is a pressing environmental issue, with over 8 million tons of plastic waste entering the oceans every year.",
-    "Deforestation contributes to habitat loss, biodiversity loss, and climate change.",
-    "The Dust Bowl of the 1930s in the United States was caused by severe drought and unsustainable farming practices.",
-    "Antarctica is the coldest, driest, and windiest continent on Earth.",
-   " Renewable energy sources such as solar, wind, and hydroelectric power offer sustainable alternatives to fossil fuels.",
-    "The Kyoto Protocol, adopted in 1997, aimed to reduce greenhouse gas emissions to combat climate change.",
-    "The Aral Sea in Central Asia has drastically shrunk due to excessive water diversion for irrigation.",
-    "Overfishing and illegal fishing practices threaten marine biodiversity and fish populations.",
-    "Rachel Carson's book 'Silent Spring', published in 1962, sparked the modern environmental movement and led to the ban of the pesticide DDT.",
-    "The Chernobyl nuclear disaster in 1986 led to widespread environmental contamination and long-term health effects.",
-   " The Paris Agreement, adopted in 2015, aims to limit global warming to well below 2 degrees Celsius above pre-industrial levels."
-    "The Pacific Garbage Patch is a vast area of marine debris concentrated by ocean currents.",
-   " The Dust Bowl migration in the United States resulted in mass displacement and migration of farmers during the 1930s.",
-    "The Clean Air Act of 1970 in the United States aimed to regulate air pollution and improve air quality.",
-    "The Exxon Valdez oil spill in 1989 off the coast of Alaska caused extensive damage to marine ecosystems.",
-        "The first Earth Day was celebrated on April 22, 1970, marking the beginning of the modern environmental movement.",
-    "The ozone layer protects life on Earth by absorbing harmful ultraviolet radiation from the sun.",
-    "The Clean Air Act of 1970 led to significant reductions in air pollution and improved air quality in the United States.",
-    "Plastic pollution poses a grave threat to marine life, with over 8 million tons of plastic waste entering the oceans annually.",
-    "Deforestation contributes to habitat loss, biodiversity decline, and climate change.",
-    "Renewable energy sources such as solar and wind power offer sustainable alternatives to fossil fuels.",
-    "The Paris Agreement, adopted in 2015, aims to limit global warming to well below 2 degrees Celsius above pre-industrial levels.",
-    "Ocean acidification, caused by increased carbon dioxide absorption, threatens marine ecosystems and coral reefs.",
-    "The Kyoto Protocol established emissions trading mechanisms to reduce greenhouse gas emissions.",
-    "The United Nations Convention on Biological Diversity (CBD) aims to conserve biodiversity and ensure its sustainable use.",
-    "Soil erosion, exacerbated by deforestation and unsustainable land use, leads to loss of soil fertility and degradation.",
-    "The Dust Bowl migration reshaped demographics and cultural landscapes in the United States.",
-    "The Montreal Protocol is regarded as one of the most successful environmental agreements, leading to the phase-out of ozone-depleting substances.",
-    "Urbanization and industrialization have led to habitat loss and fragmentation, threatening biodiversity.",
-    "The Intergovernmental Panel on Climate Change (IPCC) assesses scientific literature on climate change and its impacts.",
-    "Sustainable agriculture practices such as agroforestry and organic farming promote soil health and biodiversity.",
-    "Earth Day, first celebrated in 1970, raises awareness about environmental issues and promotes sustainability.",
-    "The International Union for Conservation of Nature (IUCN) maintains the Red List of Threatened Species to assess the conservation status of species.",
-    "The Dust Bowl migration contributed to demographic shifts and cultural changes in the United States.",
-    "The Clean Air Act Amendments of 1990 strengthened air quality standards and regulatory measures in the United States.",
-    "The Montreal Protocol successfully phased out the production and use of ozone-depleting substances, leading to the recovery of the ozone layer.",
-    "Soil conservation practices such as terracing and cover cropping help prevent soil erosion and improve soil health.",
-    "The Clean Water Act established water quality standards and pollution control measures in the United States.",
-    "The Dust Bowl prompted federal intervention through programs like the Civilian Conservation Corps (CCC) and the Soil Conservation Service (SCS).",
-    "The Rio Earth Summit resulted in agreements on biodiversity, climate change, and sustainable development.".
-    ];
+    "Each year, human activities release over 40 billion tCO₂ into the atmosphere.",
+    "The production of one kilogram of beef is associated with approximately 26 kgCO₂ emissions.",
+    "The transportation sector accounts for nearly 25% of global CO₂ emissions, with the aviation industry being a major contributor.",
+    "Deforestation contributes to about 10% of global carbon emissions, releasing stored carbon in trees into the atmosphere",
+    "Some carbon offset projects, like reforestation initiatives, can sequester up to 20 tCO₂ per acre over several decades.",
+    "Driving an electric vehicle can reduce an individual's carbon footprint by around 50% compared to a conventional gasoline-powered car.",
+    "Approximately 3 kgCO₂ is produced when using 1GB of data, and watching an HD-quality movie on Netflix causes approximately 4.5 kgCO₂ emissions.",
+	"Globally, buildings are responsible for approximately 36% of total energy use and 39% of CO₂ emissions.",
+    "The annual global carbon footprint from the fashion industry is estimated to be around 3.3 billion tons of CO₂.",
+    "As of 2021, the average global temperature has increased by approximately 1.2 degrees Celsius compared to pre-industrial levels.",
+    "The Amazon rainforest, often referred to as the 'lungs of the Earth,' produces around 20% of the world's oxygen.",
+    "In 2019, renewable energy accounted for about 26.2% of global electricity production.",
+	"Worldwide, over 90 million barrels of crude oil are consumed each day, contributing to CO₂ emissions.",
+    "The global use of coal for electricity generation surpasses 9,000 million metric tons annually.",
+    "Approximately 1.3 billion tons of food are wasted globally each year, leading to significant carbon emissions.",
+    "The aviation industry is responsible for more than 2% of global CO₂ emissions.",
+    "In 2020, global carbon dioxide emissions decreased by around 5.8% due to the COVID-19 pandemic.",
+    "The production of one ton of cement releases about 1 ton of CO₂ into the atmosphere.",
+    "Over 1.5 billion new smartphones are manufactured each year, contributing to electronic waste and carbon emissions.",
+    "The burning of fossil fuels for energy production accounts for over 70% of global greenhouse gas emissions.",
+    "Annually, deforestation results in the loss of around 7 million hectares of forest, releasing stored carbon.",
+    "The Paris Agreement aims to limit global warming to well below 2 degrees Celsius above pre-industrial levels.",
+    "Roughly 25% of the world's population relies on biomass (wood, charcoal) for cooking, contributing to indoor air pollution and carbon emissions.",
+    "The ocean absorbs about 30% of the CO₂ released into the atmosphere, leading to ocean acidification.",
+    "Every year, over 8 million metric tons of plastic enter the oceans, contributing to marine pollution and environmental harm.",
+    "The construction industry is responsible for nearly 40% of global energy-related CO₂ emissions.",
+    "The average American generates over 16 metric tons of carbon dioxide emissions annually.",
+    
+];
 
 function changeText() {
     var randomIndex = Math.floor(Math.random() * texts.length);
@@ -92,7 +73,7 @@ function checkScreenWidth() {
 
   if (screenWidth <= 600) {
             window.parent.document.getElementById('project-copyright').style.display = 'none';
-            Array.from(window.parent.document.querySelectorAll('button[data-baseweb="tab"] > div > p')).forEach(button => button.style.fontSize = '10px');
+			Array.from(window.parent.document.querySelectorAll('button[data-baseweb="tab"] > div > p')).forEach(button => button.style.fontSize = '10px');
   } else {
             window.parent.document.getElementById('project-copyright').style.display = 'block';
   }
